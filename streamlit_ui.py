@@ -4,8 +4,7 @@ import streamlit as st
 import requests
 
 
-#API_URL = "http://127.0.0.1:8000/chat/"
-API_URL = "https://virtual-friend.onrender.com/chat/"
+API_URL = "http://127.0.0.1:8000/chat/"
 SESSION_ID = "streamlit_user_001"
 
 
