@@ -1,5 +1,6 @@
 
 
+
 import gradio as gr
 import requests
 
@@ -25,7 +26,7 @@ def chat_with_api(user_input):
 
     # Append to history for Gradio display
     chat_history.append(("You", user_input))
-    chat_history.append(("Chatbot", reply))
+    chat_history.append(("Virtual Friend", reply))
 
     return "", chat_history
 
@@ -37,9 +38,9 @@ chatbot_ui = gr.Interface(
         gr.Textbox(visible=False),  # Dummy output to suppress empty string return
         gr.Chatbot()
     ],
-    title="Ollama Chat - Gradio UI",
+    title="Virtual Friend",
     live=False
 )
 
 if __name__ == "__main__":
-    chatbot_ui.launch()
+    chatbot_ui.launch(share=True)
