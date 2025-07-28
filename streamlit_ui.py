@@ -9,15 +9,7 @@ from datetime import datetime
 API_URL = "https://virtual-friend.onrender.com/chat/"
 SESSION_ID = "streamlit_user_001"
 
-def save_message(session_id, sender, message):
-    conn = sqlite3.connect("chat_history.db")
-    cursor = conn.cursor()
-    cursor.execute(
-        "INSERT INTO messages (session_id, sender, message) VALUES (?, ?, ?)",
-        (session_id, sender, message)
-    )
-    conn.commit()
-    conn.close()
+
 
 # Initialize chat history
 if "chat_history" not in st.session_state:
